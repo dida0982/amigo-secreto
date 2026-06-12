@@ -38,7 +38,8 @@ body {
   background-color: #000;
   border: 1px solid #1875e8;
   filter: drop-shadow(0px 0px 30px #1875e8);
-  height: 871px;
+  min-height: 871px;
+  height: auto;
   left: 50%;
   margin: 0 auto;
   position: absolute;
@@ -79,7 +80,8 @@ body {
   line-height: 160%;
   margin-top: 1rem;
   padding: 24px;
-  width: 453px;
+  width: 100%;
+  max-width: 453px;
 }
 
 .friends__container > p {
@@ -122,7 +124,8 @@ body {
   margin-bottom: 32px;
   outline: none;
   padding: 8px 16px;
-  width: 517px;
+  width: 100%;
+  max-width: 517px;
 }
 
 .form__input::placeholder {
@@ -203,4 +206,136 @@ body {
 .secondary {
   background-color: #fff;
   color: #1875e8;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    min-height: 700px;
+}
+
+.content__main {
+    padding: 40px;
+}
+
+.form__input {
+    width: 100%;
+    max-width: 517px;
+    box-sizing: border-box;
+}
+
+.friends__container {
+    width: 100%;
+    max-width: 453px;
+    box-sizing: border-box;
+}
+
+.page__image {
+    max-width: 35%;
+    height: auto;
+}
+
+/* Tablets */
+
+@media (max-width: 1024px) {
+    .section__title {
+        font-size: 64px;
+    }
+
+    .content__main {
+        padding: 30px;
+    }
+
+    .page__image {
+        max-width: 30%;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 768px) {
+    .content {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        width: 95%;
+    }
+
+    .content__main {
+        padding: 20px;
+        gap: 40px;
+    }
+
+    .page__image {
+        display: none;
+    }
+
+    .section__title {
+        font-size: 48px;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    .section--results {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .form__buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .friends__container,
+    .prizeDraw__container,
+    .form__input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .content__corner-rectangle {
+        display: none;
+    }
+}
+
+/* Celulares pequenos */
+
+@media (max-width: 480px) {
+    .section__title {
+        font-size: 36px;
+    }
+
+    .friends__title,
+    .prizeDraw__title,
+    .form__label {
+        font-size: 20px;
+    }
+
+    .friends__container,
+    .prizeDraw__container,
+    .form__input {
+        font-size: 16px;
+    }
+
+    .button {
+        font-size: 18px;
+    }
+
+    .form__link {
+        font-size: 18px;
+    }
 }
