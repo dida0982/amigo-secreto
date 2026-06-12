@@ -1,12 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: #000;
   min-height: 100vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .background__detail {
   background-color: #00f4bf;
-  height: calc(100% - 389px);
+  min-height: 100vh;
   left: 0;
   position: absolute;
   right: 0;
@@ -56,7 +65,8 @@ body {
   height: 33px;
   position: absolute;
   right: 32px;
-  width: 511px;
+  width: 40%;
+  min-width: 180px;
   z-index: 3;
 }
 
@@ -155,8 +165,8 @@ body {
   position: absolute;
   right: 0;
   top: 76px;
-  z-index: 2;
-  pointer-events: none;
+  max-width: 35%;
+  height: auto;
 }
 
 .prizeDraw__container {
@@ -192,7 +202,7 @@ body {
 .section__title {
   color: #fff;
   font-family: Chakra Petch;
-  font-size: 88px;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
   font-style: normal;
   font-weight: 700;
   line-height: 80%;
@@ -265,10 +275,13 @@ img {
 
 @media (max-width: 768px) {
     .content {
-        position: static;
-        transform: none;
-        margin: 20px auto;
-        width: 95%;
+      position: relative;
+      left: auto;
+      top: auto;
+      transform: none;
+      margin: 20px auto;
+      width: 95%;
+      min-height: auto;
     }
 
     .content__main {
@@ -292,6 +305,7 @@ img {
     }
 
     .form__buttons {
+        flex-wrap: wrap;
         flex-direction: column;
         align-items: stretch;
     }
